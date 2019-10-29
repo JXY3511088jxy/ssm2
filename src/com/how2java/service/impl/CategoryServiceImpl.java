@@ -3,6 +3,7 @@ package com.how2java.service.impl;
 import com.how2java.mapper.CategoryMapper;
 import com.how2java.pojo.Category;
 import com.how2java.service.CategoryService;
+import com.how2java.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +19,16 @@ public class CategoryServiceImpl implements CategoryService {//实现接口Categ
     public List<Category> list(){
         return categoryMapper.list();//可以直接实例化接口，并调用接口的方法吗？
     }
+
+    @Override
+    public List<Category> list(Page page) {
+        // TODO Auto-generated method stub
+        return categoryMapper.list(page);
+    }
+
+    @Override
+    public int total() {
+        return categoryMapper.total();
+    };
 
 }

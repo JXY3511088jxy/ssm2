@@ -3,6 +3,7 @@ package com.how2java.controller;
 
 import com.how2java.pojo.Category;
 import com.how2java.service.CategoryService;
+import com.how2java.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +19,12 @@ public class CategoryController {
     CategoryService categoryService;//自动装配了categoryService
 
     @RequestMapping("listCategory")
-    public ModelAndView listCategory(){
+    public ModelAndView listCategory(Page page){
         ModelAndView mav = new ModelAndView();
-        List<Category> cs= categoryService.list();
+        List<Category> cs= categoryService.list(page);
+        int total = categoryService.total();
+
+        page.caculateLast(total);
 
         // 放入转发参数
         mav.addObject("cs", cs);
