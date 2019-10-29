@@ -28,22 +28,22 @@ public class MybatisTest {
 
     }
 
-    @Test
-    public void testTotal(){
-        int total = categoryMapper.total();
-        System.out.println(total);
-
-    }
-
-    @Test
-    public void testList(){
-        Page page = new Page();
-        page.setStart(2);
-        page.setCount(3);
-        List<Category> cs=categoryMapper.list(page);
-        for (Category c : cs) {
-            System.out.println(c.getName());
-        }
-
-    }
+//    @Test
+//    public void testTotal(){
+//        int total = categoryMapper.total();
+//        System.out.println(total);
+//
+//    }
+//
+//    @Test
+//    public void testList(){
+//        Page page = new Page();
+//        page.setStart(2);
+//        page.setCount(3);
+//        List<Category> cs=categoryMapper.list(page);
+//        for (Category c : cs) {
+//            System.out.println(c.getName());
+//        }
+//
+//    }
 }

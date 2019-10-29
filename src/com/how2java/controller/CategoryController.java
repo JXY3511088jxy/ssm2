@@ -1,6 +1,8 @@
 package com.how2java.controller;
 
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.how2java.pojo.Category;
 import com.how2java.service.CategoryService;
 import com.how2java.util.Page;
@@ -21,8 +23,11 @@ public class CategoryController {
     @RequestMapping("listCategory")
     public ModelAndView listCategory(Page page){
         ModelAndView mav = new ModelAndView();
-        List<Category> cs= categoryService.list(page);
-        int total = categoryService.total();
+//        List<Category> cs= categoryService.list(page);
+//        int total = categoryService.total();
+        PageHelper.offsetPage(page.getStart(),10);
+        List<Category> cs = categoryService.list();
+        int total = (int) new PageInfo<>(cs).getTotal();
 
         page.caculateLast(total);
 

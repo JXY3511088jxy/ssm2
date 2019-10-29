@@ -19,7 +19,7 @@ public interface CategoryMapper {
 
     public int count();
 
-    public List<Category> list(Page page);
-
-    public int total();
+//    public List<Category> list(Page page);
+//
+//    public int total();
 }

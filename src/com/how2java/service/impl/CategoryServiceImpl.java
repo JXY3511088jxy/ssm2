@@ -20,15 +20,15 @@ public class CategoryServiceImpl implements CategoryService {//实现接口Categ
         return categoryMapper.list();//可以直接实例化接口，并调用接口的方法吗？
     }
 
-    @Override
-    public List<Category> list(Page page) {
-        // TODO Auto-generated method stub
-        return categoryMapper.list(page);
-    }
-
-    @Override
-    public int total() {
-        return categoryMapper.total();
-    };
+//    @Override
+//    public List<Category> list(Page page) {
+//        // TODO Auto-generated method stub
+//        return categoryMapper.list(page);
+//    }
+//
+//    @Override
+//    public int total() {
+//        return categoryMapper.total();
+//    }
 
 }
