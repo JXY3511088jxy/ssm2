@@ -3,6 +3,8 @@ package com.how2java.test;
 import java.util.List;
 import com.how2java.mapper.CategoryMapper;
 import com.how2java.pojo.Category;
+import com.how2java.service.CategoryService;
+import com.how2java.service.impl.CategoryServiceImpl;
 import com.how2java.util.Page;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,6 +19,8 @@ import java.awt.*;
 public class MybatisTest {
     @Autowired
     private CategoryMapper categoryMapper;
+    @Autowired
+    public CategoryService categoryService;
 
     @Test
     public void testAdd(){
@@ -46,4 +50,10 @@ public class MybatisTest {
 //        }
 //
 //    }
+
+    @Test
+    public void testAddTwo(){
+        categoryService.deleteAll();
+        categoryService.addTwo();
+    }
 }

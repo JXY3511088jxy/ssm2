@@ -3,7 +3,7 @@ package com.how2java.util;
 //Page类用于存放分页信息
 public class Page {
     int start=0;//开始位置
-    int count=25;//每页的个数
+    int count=10;//每页的个数
     int last=0;//最后一页的位置
 
     public int getStart() {
